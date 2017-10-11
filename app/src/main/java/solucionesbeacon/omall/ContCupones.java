@@ -26,10 +26,7 @@ public class ContCupones extends Fragment {
     private static final String ARG_PARAM2 = "param2";
     Context CONTEXTO;
     //contexto desde la casa subamoslo
-    // segunda subida
-    // TERCERA SUBIDA
-    // LA CUARTA ES LA VENCIDA
-    // veamos a ver si la quinta
+
        public void setmParam1(String mParam1) {
         this.mParam1 = mParam1;
     }
