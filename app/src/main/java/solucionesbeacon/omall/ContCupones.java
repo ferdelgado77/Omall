@@ -26,6 +26,7 @@ public class ContCupones extends Fragment {
     private static final String ARG_PARAM2 = "param2";
     Context CONTEXTO;
     //contexto desde la casa subamoslo
+    // EDITADO AQUI ARRIBA NO ABAJO
 
        public void setmParam1(String mParam1) {
         this.mParam1 = mParam1;
