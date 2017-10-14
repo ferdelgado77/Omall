@@ -9,7 +9,7 @@ public class Cupon {
     public  String txtEnc;
     public   String txtDet;
 
-    public Cupon(Integer id, String content, String encabezado,String estado) {
+    public Cupon(Integer id,  String encabezado,String estado) {
         this.idCupon = id;
         this.txtEnc = encabezado  ;
         this.txtDet = estado;
