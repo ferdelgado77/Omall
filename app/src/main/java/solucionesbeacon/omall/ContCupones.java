@@ -2,13 +2,22 @@ package solucionesbeacon.omall;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import solucionesbeacon.omall.items.Cupon;
+import solucionesbeacon.omall.items.TablaCupones;
 
 
 /**
@@ -25,6 +34,10 @@ public class ContCupones extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     Context CONTEXTO;
+    TablaCupones TBLCupones;
+    List<Cupon> LISTACupones = new ArrayList<Cupon>();
+    CuponAdapter ADAPTADORCUPON;
+    public static ListView LISTACUPONESVIEW;
     //contexto desde la casa subamoslo
     // EDITADO AQUI ARRIBA NO ABAJO
 
@@ -78,7 +91,8 @@ public class ContCupones extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-
+        TBLCupones = new TablaCupones();
+        LISTACupones = TBLCupones.DATOS();
 
 
     }
@@ -92,9 +106,16 @@ public class ContCupones extends Fragment {
         CONTEXTO = this.getContext();
           // solo para ver si lo sube bien como
 //ESTAMOS VIENDO
-              Integer iid = CONTEXTO.getResources().getIdentifier(mParam2,"drawable",CONTEXTO.getPackageName());
+        Integer iid = CONTEXTO.getResources().getIdentifier(mParam2,"drawable",CONTEXTO.getPackageName());
         cc.setText(mParam2);
         IV.setImageResource(iid);
+
+        ADAPTADORCUPON = new CuponAdapter(CONTEXTO, R.layout.linea_cupones, LISTACupones);
+        LISTACUPONESVIEW = (ListView) inf.findViewById(R.id.ListaCupones);
+        LISTACUPONESVIEW.setAdapter(ADAPTADORCUPON);
+
+
+
         return inf;
 
 
@@ -128,4 +149,19 @@ public class ContCupones extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+
+        //suscritos.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        //    @Override
+        //    public void onItemClick(AdapterView<?> parent, View view, int pos, long id){
+        //        Intent intent = new Intent(MainActivity.this, Acumula.class);
+        //       SELECCIONADO = pos;
+        //        startActivity(intent);
+        //    } });
+
+
+
+
+
+
 }

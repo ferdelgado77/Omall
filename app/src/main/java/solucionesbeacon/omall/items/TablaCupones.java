@@ -15,7 +15,6 @@ public class TablaCupones {
         ListaCupones.add(new Cupon(3,"CON ESTE OTRO TEXTO","tres"));
         ListaCupones.add(new Cupon(4,"VEAMOS A VER COMO SE NOTA LA DIFERENCIA ENTRE LOS DIFERENTES","cuatro"));
         ListaCupones.add(new Cupon(5,"TEXTOS DEFINIDOS EN LA PLATAFORMA DE LOS BEACONS SIN EMBARGO ESTO DEPENDERA DEL DATO FINAL","cinco"));
-
         return ListaCupones;
 
 
